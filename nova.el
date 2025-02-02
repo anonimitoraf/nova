@@ -145,6 +145,7 @@ POS-FRAME: a posframe to build the nova UI around."
 
     (let* ((save-nova-frame (nova--call-func-by-style name nova--show-func-prefix)))
 
+      (frame-restack save-nova-frame pos-frame)
       (push `(,save-nova-frame . ,pos-frame) nova--frame-list)
       
       (with-current-buffer name
